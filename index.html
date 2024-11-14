@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anon Mouse's Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Anon Mouse's Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#resume">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- About Section -->
+        <section id="about" class="content-section">
+            <div class="section-inner">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <!-- About Text -->
+                    <div class="text-content">
+                        <p id="about-text">Loading...</p>
+                    </div>
+
+                    <!-- Image Carousel -->
+                    <div class="carousel-container">
+                        <div class="carousel">
+                            <img src="images/slide1.svg" alt="Nature Scene 1" class="carousel-image">
+                            <img src="images/slide2.svg" alt="Nature Scene 2" class="carousel-image">
+                            <img src="images/slide3.svg" alt="Nature Scene 3" class="carousel-image">
+                            <img src="images/slide4.svg" alt="Nature Scene 4" class="carousel-image">
+                            <img src="images/slide5.svg" alt="Nature Scene 5" class="carousel-image">
+                        </div>
+                        
+                        <!-- Carousel Navigation -->
+                        <button class="carousel-button prev" aria-label="Previous slide">&lt;</button>
+                        <button class="carousel-button next" aria-label="Next slide">&gt;</button>
+                        <div class="carousel-dots" aria-hidden="true"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="content-section">
+            <div class="section-inner">
+                <h2>Resume</h2>
+                <div class="resume-content">
+                    <iframe 
+                        src="resume.pdf#view=Fit&zoom=page-fit" 
+                        type="application/pdf" 
+                        title="Resume"
+                        frameborder="0">
+                        <div class="pdf-fallback">
+                            <p>It seems your browser doesn't support embedded PDFs.</p>
+                            <p><a href="resume.pdf">Click here to download the PDF instead</a></p>
+                        </div>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Anon Mouse</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="content.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

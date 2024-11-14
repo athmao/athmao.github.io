@@ -1,0 +1,472 @@
+/* Variables
+----------------------------------------*/
+:root {
+    /* Colors */
+    --steel-brown: #455565;      /* Darker, desaturated blue-brown */
+    --light-steel: #697A8C;      /* Mid-tone with brown undertones */
+    --dark-steel: #2A3541;       /* Very dark blue-brown */
+    --light-warm-gray: #F2F1EF;  /* Light gray with warm undertones */
+    --medium-warm-gray: #E5E2DD; /* Medium gray with warm undertones */
+    --text-gray: #363B42;        /* Dark gray with slight warmth */
+    --text-light: #F7F6F4;       /* Light text with warm undertones */
+    
+    /* Layout */
+    --header-height: 140px;
+    --extra-space: 40px;
+    --max-content-width: 900px;
+    
+    /* Spacing */
+    --section-padding: 2rem;
+    --section-margin: 2rem;
+
+    /* Fonts */
+    --heading-font: 'Syncopate', sans-serif;
+    --body-font: 'Space Grotesk', sans-serif;
+
+    /* Border Radius */
+    --border-radius-lg: 30px;
+    --border-radius-md: 20px;
+    --border-radius-sm: 15px;
+
+    /* Letter Spacing */
+    --heading-spacing: 0.15em;
+    --nav-spacing: 0.1em;
+    --body-spacing: 0.02em;
+}
+
+/* Base Styles
+----------------------------------------*/
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-height) + var(--extra-space));
+}
+
+body {
+    font-family: var(--body-font);
+    font-weight: 300;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-warm-gray);
+    color: var(--text-gray);
+    min-height: 100vh;
+    letter-spacing: var(--body-spacing);
+}
+
+/* Header Styles
+----------------------------------------*/
+header {
+    background: linear-gradient(135deg, 
+        rgba(69, 85, 101, 0.85), 
+        rgba(42, 53, 65, 0.85)
+    );
+    color: var(--text-light);
+    padding: var(--section-padding) 0;
+    text-align: center;
+    box-shadow: 
+        0 10px 30px rgba(42, 53, 65, 0.1),
+        0 5px 15px rgba(42, 53, 65, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: auto;
+    min-height: min-content;
+    border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+header h1 {
+    margin: 0;
+    font-family: var(--heading-font);
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: var(--heading-spacing);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+}
+
+/* Navigation Styles
+----------------------------------------*/
+nav {
+    margin-top: 1.2rem;
+    background: rgba(105, 122, 140, 0.15);
+    backdrop-filter: blur(5px);
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    box-shadow: 0 2px 10px rgba(42, 53, 65, 0.15);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
+
+nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+    letter-spacing: var(--nav-spacing);
+    position: relative;
+    text-transform: uppercase;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--text-light);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    transform: translateY(-1px);
+}
+
+/* Main Content Styles
+----------------------------------------*/
+main {
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    padding: var(--section-padding);
+    padding-top: calc(var(--extra-space) + 1rem);
+}
+
+/* Content Section Styles
+----------------------------------------*/
+.content-section {
+    background: white;
+    margin: var(--section-margin) auto;
+    overflow: hidden;
+    scroll-margin-top: calc(var(--header-height) + var(--extra-space));
+    position: relative;
+    transition: transform 0.3s ease;
+    padding: 2.5rem;
+    border-radius: var(--border-radius-lg);
+    border: 1px solid rgba(42, 53, 65, 0.08);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.content-section:hover {
+    transform: translateY(-2px);
+    border-color: rgba(42, 53, 65, 0.15);
+}
+
+.section-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.section-inner h2 {
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: var(--heading-spacing);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: var(--dark-steel);
+}
+
+/* About Section Styles
+----------------------------------------*/
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.text-content {
+    font-weight: 300;
+    line-height: 1.9;
+    letter-spacing: var(--body-spacing);
+    color: var(--text-gray);
+}
+
+.text-content p {
+    margin-bottom: 1.5rem;
+    max-width: 65ch;
+}
+
+/* Carousel Styles
+----------------------------------------*/
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background: var(--medium-warm-gray);
+    margin-top: 1rem;
+    border-radius: var(--border-radius-md);
+}
+
+.carousel {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-image {
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Carousel Navigation
+----------------------------------------*/
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(247, 246, 244, 0.9);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: var(--dark-steel);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(42, 53, 65, 0.1);
+}
+
+.carousel-button:hover {
+    background: var(--text-light);
+    color: var(--steel-brown);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 15px rgba(42, 53, 65, 0.15);
+}
+
+.carousel-button.prev {
+    left: 15px;
+}
+
+.carousel-button.next {
+    right: 15px;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 15px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(247, 246, 244, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid var(--dark-steel);
+}
+
+.dot:hover {
+    transform: scale(1.2);
+}
+
+.dot.active {
+    background: var(--dark-steel);
+    transform: scale(1.1);
+}
+
+/* Resume Section Styles
+----------------------------------------*/
+.resume-content {
+    width: 100%;
+    position: relative;
+    aspect-ratio: 8.5 / 11;
+    max-width: min(100%, 800px);
+    margin: 0 auto;
+}
+
+.resume-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 15px rgba(42, 53, 65, 0.1);
+}
+
+.pdf-fallback {
+    text-align: center;
+    padding: var(--section-padding);
+    background: var(--medium-warm-gray);
+    border-radius: var(--border-radius-md);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.pdf-fallback p {
+    font-weight: 300;
+    letter-spacing: var(--body-spacing);
+    margin: 0.5rem 0;
+}
+
+.pdf-fallback a {
+    font-family: var(--heading-font);
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: var(--nav-spacing);
+    text-transform: uppercase;
+    color: var(--steel-brown);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border: 2px solid var(--steel-brown);
+    border-radius: var(--border-radius-md);
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 1rem;
+    background: rgba(247, 246, 244, 0.8);
+    box-shadow: 0 2px 8px rgba(42, 53, 65, 0.1);
+}
+
+.pdf-fallback a:hover {
+    background: var(--steel-brown);
+    color: var(--text-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(42, 53, 65, 0.15);
+}
+
+/* Footer Styles
+----------------------------------------*/
+footer {
+    font-weight: 300;
+    letter-spacing: var(--body-spacing);
+    text-align: center;
+    padding: 1.5rem 0;
+    background: var(--dark-steel);
+    color: var(--text-light);
+    margin-top: 3rem;
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    box-shadow: 0 -4px 15px rgba(42, 53, 65, 0.1);
+}
+
+/* Media Queries
+----------------------------------------*/
+@media (max-width: 768px) {
+    /* Variables */
+    :root {
+        --header-height: 160px;
+        --extra-space: 30px;
+        --section-padding: 1.5rem;
+        --section-margin: 1rem;
+        --border-radius-lg: 25px;
+        --border-radius-md: 15px;
+        --border-radius-sm: 10px;
+    }
+
+    /* Header */
+    header {
+        padding: 1.5rem 0;
+        border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Navigation */
+    nav {
+        margin-top: 1rem;
+        padding: 0.5rem 1.2rem;
+        border-radius: 30px;
+    }
+
+    nav ul {
+        gap: 1.5rem;
+    }
+
+    nav ul li a {
+        font-size: 0.85rem;
+    }
+
+    /* Carousel */
+    .carousel-container {
+        height: 250px;
+    }
+
+    /* Resume */
+    .resume-content {
+        max-width: 100%;
+    }
+
+    /* Carousel Navigation */
+    .carousel-button {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .carousel-dots {
+        padding: 6px 12px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .section-inner h2 {
+        font-size: 1.5rem;
+    }
+
+    .content-section {
+        padding: 1.5rem;
+        margin: var(--section-margin) 1rem;
+        border-radius: var(--border-radius-md);
+    }
+
+    .section-inner {
+        gap: 2rem;
+    }
+
+    .about-content {
+        gap: 2rem;
+    }
+
+    .text-content p {
+        max-width: 100%;
+    }
+}
